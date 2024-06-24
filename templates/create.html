@@ -2,17 +2,17 @@
 {% block content %}
 <h2>Create new notes</h2>
 <form method="POST">
-    {%csrf_token %}
+    {% csrf_token %}
     {{form.as_p}}
     <button type="submit">Create note </button>
 </form>
 <h3>ALl notes</h3>
 <ul>
-    {% for note_item in  note%}
+    {% for note_item in  notes %}
     <li>
-        <h4>{{note_item,title</h4>
+        <h4>{{note_item.title}}</h4>
         <p>{{note_item.content}}</p>
-        <p> Completed:{{note_item.is_complete|yesno:"yes,No}}</p>
+        <p> Completed:{{note_item.is_complete|yesno:'yes,No'}}</p>
     </li>
     {%empty %}
       <li> notes yet.</li>

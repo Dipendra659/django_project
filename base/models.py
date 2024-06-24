@@ -11,7 +11,7 @@ class Note(models.Model):
 
 
     class Meta:
-        db_table ='note'
+        db_table ='Note'
         ordering = ['-id']
     def __str__(self):
         return self.title
